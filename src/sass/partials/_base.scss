@@ -1,0 +1,25 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: $primary-bg-color;
+    display: grid;
+    grid-template-rows: 42px 1fr;
+
+    .sub-container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 .35em;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container {
+        grid-template-rows: 84px 1fr;
+    }
+}

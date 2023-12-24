@@ -1,0 +1,98 @@
+
+header {
+    width: 100%;
+    height: 100%;
+
+    .header {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: red;
+
+        .site-logo {
+            margin-right: 1.3em;
+            .logo {
+                text-decoration: none;
+                color: $primary-txt-color;
+                font-family: cursive;
+                font-size: 1.5em;
+                font-weight: bold;
+                font-style: italic;
+            }
+        }
+
+        // navigations
+        .navigations {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: .3em;
+            border-bottom: 2px solid rgba($primary-txt-color,.5);
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    display: inline-block;
+                    margin: 0 .23em;
+                    position: relative;
+
+                    .link {
+                        text-decoration: none;
+                        color: $secondary-txt-color;
+                        border-bottom: 2px solid transparent;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -.13em;
+                        width: 0;
+                        height: .15em;
+                        border-radius: .3em;
+                        background: $secondary-txt-color;
+                        transition: 1s;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .contact-link {
+                margin-left: .3em;
+                button {
+                    background: none;
+                    border: .13em solid $primary-txt-color;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-size: .95em;
+                    padding: .1em .75em;
+                    border-radius: .25em;
+                    cursor: pointer;
+                    color: $secondary-txt-color;
+                    transition: .5s;
+
+                    &:hover {
+                        background: rgba($primary-txt-color,.75);
+                        color: rgb(232, 232, 232);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header {
+        flex-direction: column;
+
+        .navigations {
+            padding-bottom: 0;
+        }
+    }
+}

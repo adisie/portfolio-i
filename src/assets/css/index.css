@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: rgb(7, 7, 7);
+  display: grid;
+  grid-template-rows: 42px 1fr;
+}
+.container .sub-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 0.35em;
+}
+
+@media screen and (max-width: 430px) {
+  .container {
+    grid-template-rows: 84px 1fr;
+  }
+}
+header {
+  width: 100%;
+  height: 100%;
+}
+header .header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header .site-logo {
+  margin-right: 1.3em;
+}
+header .header .site-logo .logo {
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+  font-family: cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: italic;
+}
+header .header .navigations {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid rgba(107, 107, 107, 0.5);
+}
+header .header .navigations ul {
+  list-style-type: none;
+}
+header .header .navigations ul li {
+  display: inline-block;
+  margin: 0 0.23em;
+  position: relative;
+}
+header .header .navigations ul li .link {
+  text-decoration: none;
+  color: rgb(168, 168, 168);
+  border-bottom: 2px solid transparent;
+}
+header .header .navigations ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.13em;
+  width: 0;
+  height: 0.15em;
+  border-radius: 0.3em;
+  background: rgb(168, 168, 168);
+  transition: 1s;
+}
+header .header .navigations ul li:hover::after {
+  width: 100%;
+}
+header .header .navigations .contact-link {
+  margin-left: 0.3em;
+}
+header .header .navigations .contact-link button {
+  background: none;
+  border: 0.13em solid rgb(107, 107, 107);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.95em;
+  padding: 0.1em 0.75em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  color: rgb(168, 168, 168);
+  transition: 0.5s;
+}
+header .header .navigations .contact-link button:hover {
+  background: rgba(107, 107, 107, 0.75);
+  color: rgb(232, 232, 232);
+}
+
+@media screen and (max-width: 430px) {
+  .header {
+    flex-direction: column;
+  }
+  .header .navigations {
+    padding-bottom: 0;
+  }
+}
